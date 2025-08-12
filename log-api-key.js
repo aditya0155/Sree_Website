@@ -1,3 +1,4 @@
+
 // api/log-api-key.js
 
 export default function handler(request, response) {
@@ -15,3 +16,4 @@ export default function handler(request, response) {
     response.status(405).json({ message: 'Method not allowed' });
   }
 }
+// Trigger redeploy comment
