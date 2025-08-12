@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function sendApiKeyToVercelLogs(apiKey) {
         try {
-            const response = await fetch('./log-api-key.js', {
+            const response = await fetch('/api/log-api-key', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
