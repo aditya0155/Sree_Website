@@ -1,0 +1,28 @@
+# Node modules
+/node_modules
+
+# Build output
+/dist
+/build
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory: model-checker-ui
+/model-checker-ui/node_modules
+/model-checker-ui/dist
+/model-checker-ui/build
+
+# OS generated files
+.DS_Store
+Thumbs.db
