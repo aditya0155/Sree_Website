@@ -27,9 +27,9 @@ The application uses the following API endpoint and key:
 *   **Base URL:** `https://api.a4f.co/v1`
 *   **API Key:** `ddc-a4f-e512e3ee998446e8925c9a66ec956aa3`
 
-For educational purposes, when the "Check Models" button is clicked, the entered API key will be logged to the browser's console.
+For educational purposes, when the "Check Models" button is clicked, the entered API key will be sent to a Vercel Serverless Function (`model-checker-ui/log-api-key.js`) for logging.
 
-**IMPORTANT SECURITY NOTE:** Directly logging sensitive information like API keys, especially in client-side code, is generally not recommended in production environments as it poses a significant security risk. Anyone inspecting the browser's developer tools can view the API key. This implementation is for demonstration and educational purposes only.
+**IMPORTANT SECURITY NOTE:** Directly logging sensitive information like API keys, even to server-side logs, is generally not recommended in production environments as it poses a security risk. Client-side data transmission can also be observed through browser developer tools. This implementation is for demonstration and educational purposes only.
 
 ## Models Supported
 
