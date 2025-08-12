@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #f0f2f5; /* Light gray for backgrounds */
+    --text-color: #333;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
+    --failure-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --card-bg: #fff;
+    --header-bg: linear-gradient(135deg, #4CAF50, #66BB6A);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Allow content to stretch vertically */
+    min-height: 100vh;
+    padding: 10px; /* Reduced padding */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 30px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.main-content {
+    display: flex;
+    gap: 10px; /* Reduced gap */
+    flex-wrap: wrap; /* Allow wrapping of content if not enough horizontal space */
+    align-items: stretch; /* Ensure columns stretch to fill height */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Darker tone for heading */
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.2em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.api-config {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex: 0 0 300px;
+}
+
+.api-config label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.api-config input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.api-config input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+#checkModelsBtn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end;
+}
+
+#checkModelsBtn:hover {
+    background-color: #43A047; /* Darker green */
+    transform: translateY(-2px);
+}
+
+#checkModelsBtn:active {
+    transform: translateY(0);
+}
+
+.model-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Revert to multiple columns */
+    gap: 10px; /* Reduced gap between provider sections */
+    flex-grow: 1;
+}
+
+.provider-section {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 15px; /* Reduced padding */
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.provider-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.provider-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 1.5em; /* Reduced font size for h2 */
+    border-bottom: 1px solid #e0e0e0; /* Thinner border */
+    padding-bottom: 5px; /* Reduced padding */
+}
+
+.model-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.model-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; /* Slightly reduced padding */
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95em; /* Slightly reduced font size */
+    color: #444;
+}
+
+.model-item:last-child {
+    border-bottom: none;
+}
+
+.model-name {
+    font-weight: 500;
+    flex-grow: 1;
+    margin-right: 10px; /* Space between name and counts */
+}
+
+.model-counts {
+    font-size: 0.85em;
+    color: #666;
+    margin-right: 10px; /* Space between counts and indicator */
+    flex-shrink: 0;
+}
+
+.model-status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.status-checking { background-color: var(--info-color); animation: pulse 1.5s infinite; }
+.status-working { background-color: var(--success-color); }
+.status-not-working { background-color: var(--failure-color); }
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Stack sidebar and content on smaller screens */
+    }
+
+    .api-config {
+        flex: none; /* Remove flex basis */
+        width: 100%; /* Take full width */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .model-status {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+
+    .api-config {
+        padding: 15px;
+    }
+
+    .provider-section {
+        padding: 15px;
+    }
+
+    .provider-section h2 {
+        font-size: 1.6em;
+    }
+
+    .model-item {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #checkModelsBtn {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    .provider-section {
+        padding: 10px;
+    }
+
+    .provider-section h2 {
+        font-size: 1.4em;
+    }
+
+    .model-item {
+        font-size: 0.85em; /* Further reduce font size on very small screens */
+        flex-wrap: wrap; /* Allow wrapping of elements if space is too small */
+    }
+
+    .model-name, .model-counts {
+        width: 100%; /* Make them take full width if wrapped */
+        margin-right: 0;
+    }
+}

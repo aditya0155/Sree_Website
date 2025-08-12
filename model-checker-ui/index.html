@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Status Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Model Status Checker</h1>
+
+        <div class="main-content">
+            <div class="api-config">
+                <label for="baseUrl">Base URL:</label>
+                <input type="text" id="baseUrl" value="https://api.a4f.co/v1" placeholder="Enter API Base URL">
+
+                <label for="apiKey">API Key:</label>
+                <input type="text" id="apiKey" value="ENTER_API_KEY" placeholder="Enter API Key">
+
+                <button id="checkModelsBtn">Check Models</button>
+            </div>
+
+            <div id="modelStatus" class="model-status">
+                <!-- Model status will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
