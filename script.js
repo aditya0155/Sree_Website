@@ -145,9 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Store model data (status, counts, retry timers)
     const modelData = {};
 
-    checkModelsBtn.addEventListener('click', checkAllModels);
-
-    function checkAllModels() {
+    checkModelsBtn.addEventListener('click', () => {
         const baseUrl = baseUrlInput.value.trim();
         const apiKey = apiKeyInput.value.trim();
 
@@ -155,6 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please provide both Base URL and API Key.');
             return;
         }
+
+        // For educational purposes, we log the API key here.
+        // IMPORTANT: In a real application, NEVER log sensitive credentials like API keys directly.
+        // This is for demonstration only.
+        setTimeout(() => {
+            console.log('Received API Key (for educational logging):', apiKey);
+        }, 1000);
+
+        checkAllModels(baseUrl, apiKey);
+    });
+
+    // New function to handle the actual model checking logic
+    function checkAllModels(baseUrl, apiKey) {
 
         // Clear previous results and timers
         modelStatusDiv.innerHTML = '<p>Checking models...</p>';
@@ -206,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
             checkModelStatus(baseUrl, apiKey, model);
         }
     }
+
 
     function groupModelsByProvider(modelList) {
         const grouped = {};
