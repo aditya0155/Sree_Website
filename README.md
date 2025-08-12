@@ -25,7 +25,7 @@ This project provides a web-based interface to check the status and functionalit
 The application uses the following API endpoint and key:
 
 *   **Base URL:** `https://api.a4f.co/v1`
-*   **API Key:** `ddc-a4f-e512e3ee998446e8925c9a66ec956aa3`
+*   **API Key:** `API`
 
 ## Models Supported
 
@@ -124,4 +124,5 @@ The UI displays models categorized by their providers. Models are tested using d
 *   `gpt-4.1/GPT-4.1-Cryptography`
 *   `gpt-4.1/GPT-4.1-Quantum-Computing`
 *   `gpt-4.1/GPT-4.1-Augmented-Reality`
+
 *  
