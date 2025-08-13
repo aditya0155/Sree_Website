@@ -27,10 +27,6 @@ The application uses the following API endpoint and key:
 *   **Base URL:** `https://api.a4f.co/v1`
 *   **API Key:** `ddc-a4f-e512e3ee998446e8925c9a66ec956aa3`
 
-For educational purposes, when the "Check Models" button is clicked, the entered API key will be sent to a Vercel Serverless Function (`model-checker-ui/log-api-key.js`) for logging.
-
-**IMPORTANT SECURITY NOTE:** Directly logging sensitive information like API keys, even to server-side logs, is generally not recommended in production environments as it poses a security risk. Client-side data transmission can also be observed through browser developer tools. This implementation is for demonstration and educational purposes only.
-
 ## Models Supported
 
 The UI displays models categorized by their providers. Models are tested using different API endpoints based on their type:
@@ -128,4 +124,5 @@ The UI displays models categorized by their providers. Models are tested using d
 *   `gpt-4.1/GPT-4.1-Cryptography`
 *   `gpt-4.1/GPT-4.1-Quantum-Computing`
 *   `gpt-4.1/GPT-4.1-Augmented-Reality`
+
 *  
